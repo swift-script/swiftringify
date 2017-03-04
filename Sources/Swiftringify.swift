@@ -1,5 +1,7 @@
-public func swiftringify(from string: String) -> String {
-    return string.characters.map(escape).joined()
+public extension String {
+    public var swiftringify: String {
+        return "\"\(characters.map(escape).joined())\""
+    }
 }
 
 fileprivate let map = [

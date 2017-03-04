@@ -3,11 +3,11 @@ import XCTest
 
 class SwiftringifyTests: XCTestCase {
     func testSwiftringify() {
-        XCTAssertEqual("\\n", swiftringify(from: "\n"))
-        XCTAssertEqual("\\r", swiftringify(from: "\r"))
-        XCTAssertEqual("\\t", swiftringify(from: "\t"))
-        XCTAssertEqual("\\\"", swiftringify(from: "\""))
-        XCTAssertEqual("\\\\", swiftringify(from: "\\"))
+        XCTAssertEqual("\"\\n\"\"", "\n".swiftringify)
+        XCTAssertEqual("\"\\r\"", "\r".swiftringify)
+        XCTAssertEqual("\"\\t\"", "\t".swiftringify)
+        XCTAssertEqual("\"\\\"\"", "\"".swiftringify)
+        XCTAssertEqual("\"\\\\\"", "\\".swiftringify)
     }
 
     static var allTests : [(String, (SwiftringifyTests) -> () throws -> Void)] {
