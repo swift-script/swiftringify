@@ -2,16 +2,17 @@ import XCTest
 @testable import Swiftringify
 
 class SwiftringifyTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        XCTAssertEqual(Swiftringify().text, "Hello, World!")
+    func testSwiftringify() {
+        XCTAssertEqual("\\n", swiftringify(from: "\n"))
+        XCTAssertEqual("\\r", swiftringify(from: "\r"))
+        XCTAssertEqual("\\t", swiftringify(from: "\t"))
+        XCTAssertEqual("\\\"", swiftringify(from: "\""))
+        XCTAssertEqual("\\\\", swiftringify(from: "\\"))
     }
-
 
     static var allTests : [(String, (SwiftringifyTests) -> () throws -> Void)] {
         return [
-            ("testExample", testExample),
+            ("testSwiftringify", testSwiftringify),
         ]
     }
 }
